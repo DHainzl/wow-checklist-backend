@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet.configuration.authentication;
+package at.dhainzl.spring.wowchecklistbackend.configuration.authentication;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

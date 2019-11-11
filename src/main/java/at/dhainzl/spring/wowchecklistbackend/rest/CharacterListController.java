@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet.rest;
+package at.dhainzl.spring.wowchecklistbackend.rest;
 
 import java.net.URISyntaxException;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.BattleNetBaseService.BattleNetRegion;
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.configuration.BattleNetRegionEditor;
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.wow.CharactersService;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.BattleNetBaseService.BattleNetRegion;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.configuration.BattleNetRegionEditor;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow.CharactersService;
 
 @RestController
 public class CharacterListController {

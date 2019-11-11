@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet.rest;
+package at.dhainzl.spring.wowchecklistbackend.rest;
 
 import java.io.IOException;
 

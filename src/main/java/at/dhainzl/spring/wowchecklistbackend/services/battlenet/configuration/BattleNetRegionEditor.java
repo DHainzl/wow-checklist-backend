@@ -1,8 +1,8 @@
-package at.dhainzl.spring.oauthbattlenet.services.battlenet.configuration;
+package at.dhainzl.spring.wowchecklistbackend.services.battlenet.configuration;
 
 import java.beans.PropertyEditorSupport;
 
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.BattleNetBaseService.BattleNetRegion;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.BattleNetBaseService.BattleNetRegion;
 
 public class BattleNetRegionEditor extends PropertyEditorSupport {
 

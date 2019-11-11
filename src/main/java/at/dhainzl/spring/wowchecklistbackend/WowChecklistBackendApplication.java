@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet;
+package at.dhainzl.spring.wowchecklistbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @SpringBootApplication
 @EnableOAuth2Sso
-public class OauthBattlenetApplication extends WebSecurityConfigurerAdapter {
+public class WowChecklistBackendApplication extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -21,6 +21,6 @@ public class OauthBattlenetApplication extends WebSecurityConfigurerAdapter {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(OauthBattlenetApplication.class, args);
+		SpringApplication.run(WowChecklistBackendApplication.class, args);
 	}
 }

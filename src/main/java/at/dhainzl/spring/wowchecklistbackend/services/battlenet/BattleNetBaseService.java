@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet.services.battlenet;
+package at.dhainzl.spring.wowchecklistbackend.services.battlenet;
 
 import org.springframework.stereotype.Controller;
 

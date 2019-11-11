@@ -1,4 +1,4 @@
-package at.dhainzl.spring.oauthbattlenet.services.battlenet.wow;
+package at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import at.dhainzl.spring.oauthbattlenet.configuration.authentication.IAuthenticationFacade;
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.BattleNetBaseService;
-import at.dhainzl.spring.oauthbattlenet.services.battlenet.BattleNetBaseService.BattleNetRegion;
+import at.dhainzl.spring.wowchecklistbackend.configuration.authentication.IAuthenticationFacade;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.BattleNetBaseService;
+import at.dhainzl.spring.wowchecklistbackend.services.battlenet.BattleNetBaseService.BattleNetRegion;
 
 @Controller
 public class CharactersService {
