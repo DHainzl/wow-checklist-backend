@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>at.dhainzl.spring.</groupId>
-	<artifactId>oauth-battlenet</artifactId>
+	<artifactId>wow-checklist-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>oauth-battlenet</name>
-	<description>Demo project for Spring Boot</description>
+	<name>wow-checklist-backend</name>
+	<description>Backend for DHainzl/ng-wow-checklist</description>
 
 	<properties>
 		<java.version>1.8</java.version>
