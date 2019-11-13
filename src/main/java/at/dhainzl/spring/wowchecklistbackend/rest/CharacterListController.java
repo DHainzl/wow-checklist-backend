@@ -20,7 +20,7 @@ public class CharacterListController {
     @Autowired
     private CharactersService charactersService;
 
-    @GetMapping(path = "/characters/{region}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/api/characters/{region}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Object characterList(@PathVariable BattleNetRegion region) throws URISyntaxException {
         return this.charactersService.getAllCharacters(region);
     }

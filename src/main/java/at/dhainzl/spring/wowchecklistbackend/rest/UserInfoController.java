@@ -14,7 +14,7 @@ public class UserInfoController {
     @Autowired
     private IAuthenticationFacade authentication;
     
-    @GetMapping(path = "/userinfo", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/api/userinfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserInfoResponse getUserInfo() {
         OAuth2Authentication auth = (OAuth2Authentication) authentication.getAuthentication();
 
