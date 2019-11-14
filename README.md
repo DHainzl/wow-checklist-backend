@@ -54,6 +54,6 @@ docker push dhainzl/wow-checklist-backend
 
 ## Example URLs
 
-* `/login` -> does the OAuth2 workflow and returns to `${app.return-url}`.
+* `/login` -> does the OAuth2 workflow and returns to `${app.return-urls}`.
 * `/api/characters/<region>` -> Lists all WoW characters of the authenticated user in `<region>`.
 * `/api/<region>/<realm>/<name>/profile` -> Returns information about the given character.
