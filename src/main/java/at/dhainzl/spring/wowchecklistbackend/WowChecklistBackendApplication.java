@@ -12,6 +12,8 @@ public class WowChecklistBackendApplication extends WebSecurityConfigurerAdapter
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			.cors()
+			.and()
 			.antMatcher("/**")
 			.authorizeRequests()
 			.antMatchers("/", "/login**")
