@@ -1,9 +1,12 @@
 package at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
+import java.net.URLEncoder;
 import java.text.MessageFormat;
 import java.util.Optional;
 
+import org.apache.commons.codec.Charsets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -47,7 +50,14 @@ public class ProfileService {
 
     private String getProfileSubUrl(BattleNetRegion region, String realm, String name, Optional<String> resource) {
         String baseUrl = this.baseService.getBaseUrl(region);
-        String profileUrl = MessageFormat.format("{0}/profile/wow/character/{1}/{2}", baseUrl, realm, name);
+        String profileUrl;
+        try {
+            profileUrl = MessageFormat.format("{0}/profile/wow/character/{1}/{2}", baseUrl,
+                    URLEncoder.encode(realm, Charsets.UTF_8.toString()),
+                    URLEncoder.encode(name, Charsets.UTF_8.toString()));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("UTF-8 Charset not supported", e);
+        }
 
         if (resource.isPresent()) {
             profileUrl += "/" + resource.get();
