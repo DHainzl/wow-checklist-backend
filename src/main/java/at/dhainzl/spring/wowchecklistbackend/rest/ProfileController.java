@@ -21,7 +21,7 @@ import at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow.ProfileServi
 @RestController
 @RequestMapping(path = "/api/{region}/{realm}/{name}/profile", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProfileController {
-    private static final List<String> COMMUNITY_FIELDS = Arrays.asList("reputation", "quests", "professions");
+    private static final List<String> COMMUNITY_FIELDS = Arrays.asList("quests", "professions");
 
     @Autowired
     private ProfileService profileService;
