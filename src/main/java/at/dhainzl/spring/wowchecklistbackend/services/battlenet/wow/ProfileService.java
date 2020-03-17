@@ -48,6 +48,18 @@ public class ProfileService {
         return this.baseService.getFromApi(url, Object.class);
     }
 
+    // TODO Return better object
+    public Object getCompletedQuests(BattleNetRegion region, String realm, String name) throws URISyntaxException {
+        String url = this.getProfileSubUrl(region, realm, name, Optional.of("quests/completed"));
+        return this.baseService.getFromApi(url, Object.class);
+    }
+
+    // TODO Return better object
+    public Object getProfessions(BattleNetRegion region, String realm, String name) throws URISyntaxException {
+        String url = this.getProfileSubUrl(region, realm, name, Optional.of("professions"));
+        return this.baseService.getFromApi(url, Object.class);
+    }
+
     private String getProfileSubUrl(BattleNetRegion region, String realm, String name, Optional<String> resource) {
         String baseUrl = this.baseService.getBaseUrl(region);
         String profileUrl;

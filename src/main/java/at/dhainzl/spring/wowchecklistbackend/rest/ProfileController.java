@@ -1,8 +1,6 @@
 package at.dhainzl.spring.wowchecklistbackend.rest;
 
 import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,19 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import at.dhainzl.spring.wowchecklistbackend.services.battlenet.BattleNetBaseService.BattleNetRegion;
 import at.dhainzl.spring.wowchecklistbackend.services.battlenet.configuration.BattleNetRegionEditor;
-import at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow.CommunityProfileService;
 import at.dhainzl.spring.wowchecklistbackend.services.battlenet.wow.ProfileService;
 
 @RestController
 @RequestMapping(path = "/api/{region}/{realm}/{name}/profile", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProfileController {
-    private static final List<String> COMMUNITY_FIELDS = Arrays.asList("quests", "professions");
-
     @Autowired
     private ProfileService profileService;
-
-    @Autowired
-    private CommunityProfileService communityProfileService;
 
     @GetMapping(path = "")
     public Object getProfile(
@@ -74,13 +66,22 @@ public class ProfileController {
         return this.profileService.getReputations(region, realm, name);
     }
 
-    @GetMapping(path = "community")
-    public Object getCommunityData(
+    @GetMapping(path = "quests/completed")
+    public Object getCompletedQuests(
         @PathVariable BattleNetRegion region,
         @PathVariable String realm,
         @PathVariable String name
     ) throws URISyntaxException {
-        return this.communityProfileService.getProfileData(region, realm, name, COMMUNITY_FIELDS);
+        return this.profileService.getCompletedQuests(region, realm, name);
+    }
+
+    @GetMapping(path = "professions")
+    public Object getProfessions(
+        @PathVariable BattleNetRegion region,
+        @PathVariable String realm,
+        @PathVariable String name
+    ) throws URISyntaxException {
+        return this.profileService.getProfessions(region, realm, name);
     }
 
     @InitBinder
