@@ -36,21 +36,7 @@ SERVER_SSL_KEY-STORE-PASSWORD=<password>
 
 ### Building and releasing
 
-In order to push a new version of the docker image, you first need to build the app in production mode:
-
-```
-mvn clean install -P prod
-```
-
-Then you can build your file and ultimately push it to a docker registry. Note that you will most likely run into an endless loop when doing the authentication via http, so the app needs to be served via https.
-Example of how this might look like:
-
-```
-docker build . -t dhainzl/wow-checklist-backend
-docker run --rm --name wow-checklist-backend -e SECURITY_OAUTH2_CLIENT_CLIENTID=REDACTED -e APP_OAUTH2_CLIENT_SECRET=REDACTED -p 8080:8080 dhainzl/wow-checklist-backend
-docker stop dhainzl/wow-checklist-backend
-docker push dhainzl/wow-checklist-backend
-```
+A build is done automatically via github workflows. Check .github/workflows/ for detailed info.
 
 ## Example URLs
 
