@@ -14,7 +14,7 @@ public class UserInfoResponse {
 
         @SuppressWarnings("unchecked")
         Map<String, Object> authDetailsMap = (Map<String, Object>) authDetails;
-        userInfo.battletag = (String) authDetailsMap.getOrDefault("battletag", "");
+        userInfo.battletag = (String) authDetailsMap.getOrDefault("battle_tag", "");
 
         return userInfo;
     }

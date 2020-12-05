@@ -2,7 +2,6 @@ package at.dhainzl.spring.wowchecklistbackend.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +15,6 @@ public class UserInfoController {
     
     @GetMapping(path = "/api/userinfo", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserInfoResponse getUserInfo() {
-        OAuth2Authentication auth = (OAuth2Authentication) authentication.getAuthentication();
-
-        return UserInfoResponse.fromAuthDetails(auth.getUserAuthentication().getDetails());
+        return this.authentication.getAuthAsUserInfo().orElse(null);
     }
 }

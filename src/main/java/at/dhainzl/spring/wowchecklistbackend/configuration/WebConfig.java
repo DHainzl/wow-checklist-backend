@@ -22,7 +22,7 @@ public class WebConfig implements WebMvcConfigurer {
             context.setCookieProcessor(cookieProcessor);
         };
     }
-    
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry
