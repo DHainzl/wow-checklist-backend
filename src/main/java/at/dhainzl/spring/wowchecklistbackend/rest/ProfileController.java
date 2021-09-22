@@ -84,6 +84,15 @@ public class ProfileController {
         return this.profileService.getProfessions(region, realm, name);
     }
 
+    @GetMapping(path = "collections/pets")
+    public Object getPets(
+            @PathVariable BattleNetRegion region,
+            @PathVariable String realm,
+            @PathVariable String name
+    ) throws URISyntaxException {
+        return this.profileService.getPets(region, realm, name);
+    }
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(BattleNetRegion.class, new BattleNetRegionEditor());
