@@ -39,9 +39,9 @@ public class BattleNetBaseService {
         OAuth2AuthorizedClient client = clientService.loadAuthorizedClient(authToken.getAuthorizedClientRegistrationId(), authToken.getName());
         String token = client.getAccessToken().getTokenValue();
 
-        // A higher buffer size (here 2MB) is needed to cache the achievements result, especially
+        // A higher buffer size (here 4MB) is needed to cache the achievements result, especially
         ExchangeStrategies exchangeStrategies = ExchangeStrategies.builder()
-            .codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(1024 * 2048))
+            .codecs(configurer -> configurer.defaultCodecs().maxInMemorySize(1024 * 1024 * 4))
             .build();
 
         return WebClient.builder()
